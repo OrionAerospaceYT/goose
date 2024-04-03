@@ -10,8 +10,6 @@
     internal::warnCheck(condition, #condition, __FILE__, __LINE__, message);
 
 // Graphing macros
-#define TERMINAL_BEGINNING "q8_Q7"
-#define TERMINAL_ENDING "I761r"
 #define GRAPHING_BEGINNING "l058~"
 #define GRAPHING_ENDING "zC43_"
 #define TOP ",1,"
@@ -22,27 +20,13 @@
     Serial.print(type);         \
     Serial.print(data);         \
     Serial.print(GRAPHING_ENDING);
-#define PRINT(text)     \
-    Serial.print(TERMINAL_BEGINNING); \
-    Serial.print(text); \
-    Serial.print(TERMINAL_ENDING);
-#define PRINTLN(text)     \
-    Serial.print(TERMINAL_BEGINNING); \
-    Serial.print(text); \
-    Serial.println(TERMINAL_ENDING);
-#define PRINTHEX(text)     \
-    Serial.print(TERMINAL_BEGINNING); \
-    Serial.print(text,HEX) \
-    Serial.println(TERMINAL_ENDING);
-#define PRINTF(float, places)  \
-    Serial.print(TERMINAL_BEGINNING); \
-    Serial.print(float,places); \
-    Serial.print(TERMINAL_ENDING);
-#define PRINTFLN(float, places)  \
-    Serial.print(TERMINAL_BEGINNING); \
-    Serial.print(float,places); \
-    Serial.println(TERMINAL_ENDING);
+#define PRINT(text) Serial.print(text);
+#define PRINTLN(text) Serial.print(text);
+#define PRINTHEX(text) Serial.print(text, HEX);
+#define PRINTF(float, places) Serial.print(float, places);
+#define PRINTFLN(float, places) Serial.print(float, places);
 #define PRINTRAW(text) Serial.print(text);
+#define PRINTRAWLN(text) Serial.println(text);
 #define REC Serial.print("#r3cK");
 #define END_REC Serial.print("!r3Ck");
 #define PRINTRAWLN(text) Serial.println(text);
@@ -65,7 +49,7 @@ void read(T bus, uint8_t addr, uint8_t reg, uint8_t* buf, uint16_t len) {
 }
 
 template <typename T>
-static int writeByte(T bus, uint8_t addr, uint8_t reg, uint8_t data){
+static int writeByte(T bus, uint8_t addr, uint8_t reg, uint8_t data) {
     bus->beginTransmission(addr);
     bus->write(reg);
     bus->write(data);
@@ -74,7 +58,7 @@ static int writeByte(T bus, uint8_t addr, uint8_t reg, uint8_t data){
 }
 
 template <typename T>
-static uint8_t readByte(T bus, uint8_t addr, uint8_t reg){
+static uint8_t readByte(T bus, uint8_t addr, uint8_t reg) {
     bus->beginTransmission(addr);
     bus->write(reg);
     bus->endTransmission();
