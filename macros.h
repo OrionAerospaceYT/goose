@@ -23,6 +23,7 @@
 #define PRINT(text) Serial.print(text);
 #define PRINTLN(text) Serial.println(text);
 #define PRINTHEX(text) Serial.print(text, HEX);
+#define PRINTHEXLN(text) Serial.printLN(text, HEX);
 #define PRINTF(float, places) Serial.print(float, places);
 #define PRINTFLN(float, places) Serial.println(float, places);
 #define PRINTRAW(text) Serial.print(text);
