@@ -21,10 +21,10 @@
     Serial.print(data);         \
     Serial.print(GRAPHING_ENDING);
 #define PRINT(text) Serial.print(text);
-#define PRINTLN(text) Serial.print(text);
+#define PRINTLN(text) Serial.println(text);
 #define PRINTHEX(text) Serial.print(text, HEX);
 #define PRINTF(float, places) Serial.print(float, places);
-#define PRINTFLN(float, places) Serial.print(float, places);
+#define PRINTFLN(float, places) Serial.println(float, places);
 #define PRINTRAW(text) Serial.print(text);
 #define PRINTRAWLN(text) Serial.println(text);
 #define REC Serial.print("#r3cK");
