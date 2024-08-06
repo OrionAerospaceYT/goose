@@ -33,6 +33,8 @@
 #define PRINTRAWLN(text) Serial.println(text);
 #define END_LOG Serial.println();
 
+// Macros file
+
 namespace internal {
 
 template <typename T>
