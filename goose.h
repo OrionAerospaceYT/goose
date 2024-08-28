@@ -28,8 +28,8 @@
 #define PRINTFLN(float, places) Serial.println(float, places);
 #define PRINTRAW(text) Serial.print(text);
 #define PRINTRAWLN(text) Serial.println(text);
-#define REC Serial.print("#r3cK");
-#define END_REC Serial.print("!r3Ck");
+#define REC() Serial.print("#r3cK");
+#define END_REC() Serial.print("!r3Ck");
 #define PRINTRAWLN(text) Serial.println(text);
 #define END_LOG Serial.println();
 
