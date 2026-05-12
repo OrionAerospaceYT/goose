@@ -30,7 +30,6 @@
 #define PRINTRAWLN(text) Serial.println(text);
 #define REC() Serial.print("#r3cK");
 #define END_REC() Serial.print("!r3Ck");
-#define PRINTRAWLN(text) Serial.println(text);
 #define END_LOG Serial.println();
 
 // Macros file
